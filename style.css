@@ -728,8 +728,22 @@
       .areas-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
       .area-card { padding: 1.4rem 1rem; }
 
-      /* RECENSIONI — 1 colonna */
-      .reviews-grid { grid-template-columns: 1fr; }
+      /* RECENSIONI — slider orizzontale */
+      .reviews-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 1rem;
+        padding-bottom: 1rem;
+        grid-template-columns: unset;
+      }
+      .reviews-grid::-webkit-scrollbar { display: none; }
+      .review-card {
+        flex: 0 0 82vw;
+        scroll-snap-align: center;
+      }
 
       /* SERVIZI — 1 colonna, prezzo allineato a destra */
       .services-list { grid-template-columns: 1fr; }
